@@ -1,0 +1,14 @@
+max_concurrency = 4
+max_retries = 3
+retry_wait_time = 5
+timeout = 30
+
+# x.com serves a login wall to automated clients and npmjs.com answers 403 to
+# bots, so neither can be checked from a runner. Both are checked by hand; the
+# entries that depend on them carry a snapshot date instead.
+exclude = [
+  '^https?://(www\.)?x\.com/',
+  '^https?://twitter\.com/',
+  '^https?://(www\.)?npmjs\.com/',
+  '^https?://discord\.gg/',
+]
